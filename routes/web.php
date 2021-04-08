@@ -17,16 +17,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/user', function () {
-    $user = [
-        'id'=>1,
-        'firstName'=>'Иван',
-        'lastName'=>'Мещеряков',
-        'country'=>'Россия',
-        'city'=>'Нижневартовск'
-    ];
-    
-    return view('user', [
-        'user' => $user
+Route::get('/tasks', function () {
+    $tasks = [
+        [
+          'id'=>1,
+          'name'=>'Изучить Laravel'
+        ], 
+        [
+          'id'=>2,
+          'name'=>'Повторить PHP'
+        ], 
+        [
+          'id'=>3,
+          'name'=>'Вспомнить Vue.js'
+        ]
+      ];
+
+    return view('tasks', [
+        'tasks' => $tasks
     ]);
 });
